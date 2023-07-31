@@ -4,7 +4,7 @@ let rect_height = 20;
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
@@ -19,11 +19,18 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  let sx = 180 //let you adjust the shape of the mouth
-  let sy = 0 //let you adjust the shape of the mouth
-  let hx = 50
-  let hy = 200
+  let sx = 180 //lets you adjust the shape of the mouth
+  let sy = 0 //lets you adjust the shape of the mouth
+  let hx = 90 //lets you adjust the placement of the face
+  let hy = 100 //lets you adjust the placement of the face
   face(sx,sy,hx,hy)
+
+ // if(face < 90, 110){
+    fill(	255,	115,	115)
+  //}
+ //else{
+    fill(244, 120, 53)
+ //}
 
   
 }
@@ -32,7 +39,14 @@ function face(sx,sy,hx,hy) {
 
   strokeWeight(1.5);
   stroke(162, 0, 255);
-  fill(244, 120, 53);
+
+  if( hx < 90 ){
+    fill(	255,	115,	115)
+  }
+  else{
+    fill(244, 120, 53)
+  }
+  //fill(244, 120, 53);
 
   ellipse(hx, hy, 60, 90); //head
 
@@ -44,5 +58,5 @@ function face(sx,sy,hx,hy) {
 
   ellipse(hx+11, hy-25, 5, 5); //right eye
 
-  arc(hx, hy+15, 20, 60, sy, sx); //mouth
+  arc(hx, hy+8, 20, 60, sy, sx); //mouth
 }
