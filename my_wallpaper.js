@@ -21,16 +21,12 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   let sx = 180 //lets you adjust the shape of the mouth
   let sy = 0 //lets you adjust the shape of the mouth
-  let hx = 90 //lets you adjust the placement of the face
-  let hy = 100 //lets you adjust the placement of the face
-  face(sx,sy,hx,hy)
-
- // if(face < 90, 110){
-    fill(	255,	115,	115)
-  //}
- //else{
-    fill(244, 120, 53)
- //}
+  let hx = 120 //lets you adjust the placement of the face
+  let hy = 50 //lets you adjust the placement of the face
+  face(180,0,50,50)
+  face(0,180,50, 150)
+  face(180,0,150,150)
+  face(0,180,150,50)
 
   
 }
@@ -40,13 +36,21 @@ function face(sx,sy,hx,hy) {
   strokeWeight(1.5);
   stroke(162, 0, 255);
 
-  if( hx < 90 ){
+  if( hx < 100 &&( hy < 100) ){
     fill(	255,	115,	115)
   }
-  else{
-    fill(244, 120, 53)
+
+  if(hx <100 &&(hy >100)){
+    fill(244, 120, 53);
   }
-  //fill(244, 120, 53);
+
+  if(hx>100 && (hy < 100)){
+    fill(106,13,131)
+  }
+
+  if(hx >100 && (hy > 100)){
+    fill(234,0,217)
+  }
 
   ellipse(hx, hy, 60, 90); //head
 
